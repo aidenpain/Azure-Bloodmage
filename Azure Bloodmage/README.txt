@@ -1,0 +1,1 @@
+'e' key to go through dialogue, left alt to cast a fireball. Haven't tested to see what these buttons are on the controller.
