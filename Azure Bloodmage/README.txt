@@ -1,1 +1,2 @@
 'e' key to go through dialogue, left alt to cast a fireball. Haven't tested to see what these buttons are on the controller.
+The score tracker won't work unless you start from the _preload.unity scene.
