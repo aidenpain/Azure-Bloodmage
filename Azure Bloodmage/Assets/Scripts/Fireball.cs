@@ -13,7 +13,6 @@ public class Fireball : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		Debug.Log(col.gameObject.name);
 		if(col.gameObject.tag == "Enemy"){
 			col.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
 			Destroy(gameObject);
@@ -25,7 +24,6 @@ public class Fireball : MonoBehaviour {
 	}
 	
 	private IEnumerator TimedDestroy(){
-		Debug.Log("Destroy?");
 		yield return new WaitForSeconds(1f);
 		Destroy(gameObject);
 	}
