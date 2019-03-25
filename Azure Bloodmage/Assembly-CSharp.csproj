@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\GameFinish.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\GameOver2.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\SelectOnInput.cs" />
