@@ -2,11 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour {
+public class EnemyHealth1 : MonoBehaviour {
 	public Camera cam;
 	public int maxHealth;
 	private int curHealth;
 	
+	public CollectObjects collectObj;
 	public GameObject healthBarPrefab;	//prefab from assets folder
 	private GameObject HealthBarInstance;	//specific instance of prefab
 	private RectTransform healthBar;	//red bar resizes to show how much health the enemy has left
@@ -50,11 +51,12 @@ public class EnemyHealth : MonoBehaviour {
 	}
 	
 	public void TakeDamage(int damage){
-		curHealth -= damage;	
+		curHealth -= damage;
 		healthWidth = (float)curHealth/maxHealth*barWidth;
 		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);
 		
 		if (curHealth <= 0){
+			
 			Destroy(HealthBarInstance.gameObject);
 			Destroy(this.gameObject);
 		}

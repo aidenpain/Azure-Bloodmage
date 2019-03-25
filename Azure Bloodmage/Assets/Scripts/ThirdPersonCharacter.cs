@@ -71,6 +71,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 		// send input and other state parameters to the animator
 		//UpdateAnimator(move);
+		m_Rigidbody.velocity = move;
 	}
 
 
