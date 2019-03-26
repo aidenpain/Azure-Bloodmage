@@ -81,7 +81,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
-
+		public GameObject pauseMenu;
 
         private Rigidbody m_RigidBody;
         private float m_YRotation;
@@ -130,11 +130,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (Input.GetButtonDown("Jump") && !m_Jump)
-            {
+            if (Input.GetButtonDown("Jump") && !m_Jump){
                 m_Jump = true;
             }
-			
 		}
 
 

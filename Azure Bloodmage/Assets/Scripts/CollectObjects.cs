@@ -20,7 +20,12 @@ public class CollectObjects : MonoBehaviour{
 		}
 		else if(col.gameObject.tag == "Collectible"){
 			Destroy(col.gameObject);
-			scoreText.text = "Score: "+ (++localScore);
+			UpdateLocalScore(1);
 		}
+	}
+	
+	void UpdateLocalScore(int score){
+		localScore += score;
+		scoreText.text = "Score: "+ localScore;
 	}
 }
