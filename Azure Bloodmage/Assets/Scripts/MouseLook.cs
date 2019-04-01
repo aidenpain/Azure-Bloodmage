@@ -31,9 +31,13 @@ public class MouseLook
 		float yRot = Input.GetAxis("Mouse X") * XSensitivity;
 		float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
 
-		m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
-		m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
-
+		if(Mathf.Abs(yRot) > 0.5){
+			//Debug.Log("Turning...");
+			m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
+		}
+		if(Mathf.Abs(xRot) > 0.5){
+			m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
+		}
 		if(clampVerticalRotation)
 			m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);
 
@@ -65,7 +69,7 @@ public class MouseLook
 
 	public void UpdateCursorLock()
 	{
-		//if the user set "lockCursor" we check & properly lock the cursos
+		//if the user set "lockCursor" we check & properly lock the cursors
 		if (lockCursor)
 			InternalLockUpdate();
 	}
@@ -108,6 +112,5 @@ public class MouseLook
 
 		return q;
 	}
-
 }
 

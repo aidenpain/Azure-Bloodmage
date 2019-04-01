@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Audio\Sound.cs" />
      <Compile Include="Assets\Scripts\AutoLoadScene.cs" />
+     <Compile Include="Assets\Scripts\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\Collectibles\McguffinFloat.cs" />
      <Compile Include="Assets\Scripts\CollectObjects.cs" />
      <Compile Include="Assets\Scripts\DestroyEverything.cs" />

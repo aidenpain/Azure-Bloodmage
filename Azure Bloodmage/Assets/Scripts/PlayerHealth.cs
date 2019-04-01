@@ -3,33 +3,43 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
-	public int maxHealth;
+	private int maxHealth;
 	private int curHealth;
+	private int maxMana;
+	private int curMana;
 	
 	private GameObject HealthBarInstance;	//specific instance of prefab
-	public RectTransform healthBar;	//red bar resizes to show how health is left
-	public GameObject bgBar;	//background bar
+	public RectTransform healthBar;			//red bar resizes to show how health is left
+	public RectTransform manaBar;			//blue bar resizes to show how mana is left
+	public GameObject bgBar;				//background bar
 	
-	private float healthWidth;	//shows how much is left
+	private float healthWidth;	//shows how much health is left
+	private float manaWidth;	//shows how much mana is left
 	private float barWidth;		//width of original bar
-	
-	Color healthColor;
-	Color bgBarColor;
-	
+		
 	private int iframes;
 	private int itimer;
+	private int timer;
 	
 	public void Awake(){
+		maxHealth = GetComponent<CharacterStats>().health;
 		curHealth = maxHealth;
+		maxMana = GetComponent<CharacterStats>().mana;
+		curMana = maxMana;
 		barWidth = healthBar.rect.width;
-		healthColor = healthBar.GetComponent<Image>().color;
-		bgBarColor = bgBar.GetComponent<Image>().color;
-		iframes = 60;
+		iframes = 30;
 		itimer = 0;
+		timer = 0;
 	}
 	
 	public void Update(){
 		if(itimer < iframes)itimer++;
+		if(timer < iframes)timer++;
+		else{
+			curMana++;
+			UpdateMana();
+			timer = 0;
+		}
 	}
 	
 	void OnCollisionStay(Collision col){
@@ -49,5 +59,22 @@ public class PlayerHealth : MonoBehaviour {
 		if (curHealth <= 0){
 			GetComponent<GameOver>().gameOver();
 		}
+	}
+	
+	public bool DepleteMana(int cost){
+		if (curMana < cost){
+			Debug.Log("Not enough mana!");
+			return false;
+		}
+		else{
+			curMana -= cost;
+			UpdateMana();
+			return true;
+		}
+	}
+	
+	public void UpdateMana(){
+		manaWidth = (float)curMana/maxMana*barWidth;
+		manaBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, manaWidth);
 	}
 }

@@ -20,14 +20,15 @@ public class Attack : MonoBehaviour {
         attackTimer += Time.deltaTime;
 		if(Input.GetButtonDown("Fire1") && attackTimer >= myWeapon.attackCoolDown){ //sword
 			attackTimer = 0f;
-			DoAttack();
+			MeleeAttack();
 		}
 		else if(Input.GetButtonDown("Fire2") && attackTimer >= fireballCoolDown){ //fireball
-			Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
+			if(GetComponent<PlayerHealth>().DepleteMana(5))
+				Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
 		}
 	}
 	
-	private void DoAttack()
+	private void MeleeAttack()
     {
         RaycastHit hit;
 
