@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 	private float barWidth;		//width of original bar
 		
 	private int iframes;
+	private int refresh_frames;
 	private int itimer;
 	private int timer;
 	
@@ -28,16 +29,19 @@ public class PlayerHealth : MonoBehaviour {
 		curMana = maxMana;
 		barWidth = healthBar.rect.width;
 		iframes = 30;
+		refresh_frames = 30;
 		itimer = 0;
 		timer = 0;
 	}
 	
 	public void Update(){
 		if(itimer < iframes)itimer++;
-		if(timer < iframes)timer++;
+		if(timer < refresh_frames)timer++;
 		else{
-			curMana++;
-			UpdateMana();
+			if(curMana < maxMana){
+				curMana++;
+				UpdateMana();
+			}
 			timer = 0;
 		}
 	}
