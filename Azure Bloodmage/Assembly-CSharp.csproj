@@ -67,7 +67,6 @@
      <Compile Include="Assets\Scripts\DestroyEverything.cs" />
      <Compile Include="Assets\Scripts\DontDestroyThis.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
-     <Compile Include="Assets\Scripts\EnemyHealth1.cs" />
      <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\GameFinish.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />

@@ -82,6 +82,7 @@ public class ABMPlayerController : MonoBehaviour
 	public GameObject pauseMenu;
 
 	private Rigidbody m_RigidBody;
+	private CapsuleCollider m_Capsule;
 	private float m_YRotation;
 	private Vector3 m_GroundContactNormal;
 	private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
@@ -120,6 +121,7 @@ public class ABMPlayerController : MonoBehaviour
 	private void Start()
 	{
 		m_RigidBody = GetComponent<Rigidbody>();
+		m_Capsule = GetComponent<CapsuleCollider>();
 		mouseLook.Init (transform, cam.transform);
 	}
 
@@ -194,7 +196,9 @@ public class ABMPlayerController : MonoBehaviour
 	private void StickToGroundHelper()
 	{
 		RaycastHit hitInfo;
-		if(Physics.BoxCast(transform.position, new Vector3(transform.localScale.x, 0.1f, transform.localScale.z), Vector3.down, out hitInfo, transform.rotation, transform.localScale.y))
+		if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+							   ((m_Capsule.height/2f) - m_Capsule.radius) +
+							   advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
 			if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
 			{
@@ -240,7 +244,8 @@ public class ABMPlayerController : MonoBehaviour
 	{
 		m_PreviouslyGrounded = m_IsGrounded;
 		RaycastHit hitInfo;
-		if(Physics.BoxCast(transform.position, new Vector3(transform.localScale.x, 0.1f, transform.localScale.z), Vector3.down, out hitInfo, transform.rotation, transform.localScale.y))
+		if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+							   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
 			m_IsGrounded = true;
 			m_GroundContactNormal = hitInfo.normal;

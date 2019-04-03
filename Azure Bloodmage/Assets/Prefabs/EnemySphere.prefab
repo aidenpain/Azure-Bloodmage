@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 5841849418685577399}
   - component: {fileID: 5841849418685577400}
   - component: {fileID: 5841849418685577395}
-  - component: {fileID: 6535745160930936180}
+  - component: {fileID: 7257333073352710658}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Enemy
@@ -332,7 +332,7 @@ MonoBehaviour:
   _patrolPoints:
   - {fileID: 5841849417848341874}
   - {fileID: 5841849417892819662}
---- !u!114 &6535745160930936180
+--- !u!114 &7257333073352710658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,10 +341,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5841849418685577403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4887dc325b819e0438c0c511fd0549ef, type: 3}
+  m_Script: {fileID: 11500000, guid: b2b557ae4801032409ff6b9c324718c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
-  collectObj: {fileID: 0}
   healthBarPrefab: {fileID: 6096618278073626905, guid: c799b5236429c0647b52a1c1b3ff3830,
     type: 3}

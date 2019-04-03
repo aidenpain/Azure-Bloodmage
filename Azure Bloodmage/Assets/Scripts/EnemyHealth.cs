@@ -51,11 +51,12 @@ public class EnemyHealth : MonoBehaviour {
 	}
 	
 	public void TakeDamage(int damage){
-		curHealth -= damage;	
+		curHealth -= damage;
 		healthWidth = (float)curHealth/maxHealth*barWidth;
 		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);
 		
 		if (curHealth <= 0){
+			
 			Destroy(HealthBarInstance.gameObject);
 			Destroy(this.gameObject);
 		}

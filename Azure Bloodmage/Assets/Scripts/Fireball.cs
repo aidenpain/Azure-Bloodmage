@@ -14,7 +14,10 @@ public class Fireball : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Enemy"){
-			col.gameObject.GetComponent<EnemyHealth1>().TakeDamage(10);
+			col.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+			Destroy(gameObject);
+		}
+		else{
 			Destroy(gameObject);
 		}
 	}
