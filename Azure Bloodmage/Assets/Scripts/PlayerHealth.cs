@@ -67,7 +67,6 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public bool DepleteMana(int cost){
 		if (curMana < cost){
-			Debug.Log("Not enough mana!");
 			return false;
 		}
 		else{

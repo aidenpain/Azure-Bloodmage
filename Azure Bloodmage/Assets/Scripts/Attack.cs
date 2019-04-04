@@ -20,10 +20,10 @@ public class Attack : MonoBehaviour {
 	
 	public void Update(){
 		RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f))
 			reticule.transform.position = hit.point;
 		else
-			reticule.transform.localPosition = new Vector3(0,0,5f);
+			reticule.transform.localPosition = new Vector3(0,0,10f);
 
         attackTimer += Time.deltaTime;
 		if(Input.GetButtonDown("Fire1") && attackTimer >= myWeapon.attackCoolDown){ //sword

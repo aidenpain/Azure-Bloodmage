@@ -14,14 +14,14 @@ public class CollectObjects : MonoBehaviour{
 	}
 	
 	void OnCollisionEnter(Collision col){
-		if(col.gameObject.tag == "Interactable"){
-			if(col.gameObject.GetComponent<ShowDialogue>())
-				StartCoroutine(col.gameObject.GetComponent<ShowDialogue>().showText());
-		}
-		else if(col.gameObject.tag == "Collectible"){
+		if(col.gameObject.tag == "Collectible"){
 			Destroy(col.gameObject);
 			UpdateLocalScore(1);
 		}
+		/*else if(col.gameObject.tag == "Interactable"){
+			if(col.gameObject.GetComponent<ShowDialogue>())
+				StartCoroutine(col.gameObject.GetComponent<ShowDialogue>().showText());
+		}*/
 	}
 	
 	void UpdateLocalScore(int score){

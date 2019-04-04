@@ -4,26 +4,20 @@ using UnityEngine.UI;
 
 public class GameFinish : MonoBehaviour {
 	public GameObject levelFinishScreen;
-	private bool gotCoins;
-	
-	void Start(){
-		gotCoins = false;
-	}
 	
 	void OnTriggerEnter (Collider col)
 	{
-		//getting both coins
-		if(GetComponent<CollectObjects>().localScore == 2)
-		{
-			gotCoins = true;
-		}
-		//reaching the mousehole
-		else if(col.gameObject.name == "CaveEntrance")
-		{
+		Debug.Log(col.gameObject.name);
+		//reaching the cave
+		if(col.gameObject.name == "CaveEntrance" || col.gameObject.name == "CaveEntrance2"){
 			//if you got the coins, complete the game
-			if(gotCoins){
+			if(GetComponent<CollectObjects>().localScore >= 2){
 				levelFinishScreen.SetActive(true);
 				GetComponent<ABMPlayerController>().enabled = false;
+			}
+			//otherwise show the prompt
+			else{
+				StartCoroutine(col.gameObject.GetComponent<ShowDialogue>().showText());
 			}
 		}
 	}
