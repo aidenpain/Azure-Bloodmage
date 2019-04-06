@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 524}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1304
     height: 725
-  m_MinSize: {x: 950, y: 524}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -358,9 +358,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -47.15, y: 2.69, z: -120.18}
+    m_Target: {x: -48.85, y: 2.5641017, z: -123.77}
     speed: 2
-    m_Value: {x: -47.15, y: 2.69, z: -120.18}
+    m_Value: {x: -18.1, y: 1, z: -167.50757}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -388,17 +388,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.17506474, y: -0.8192048, z: 0.43590274, w: 0.3290057}
+    m_Target: {x: 0.1587177, y: -0.7594359, z: 0.20162028, w: 0.59784204}
     speed: 2
-    m_Value: {x: 0.17506474, y: -0.8192048, z: 0.43590274, w: 0.3290057}
+    m_Value: {x: 0.12960969, y: 0.6196201, z: -0.10470303, w: 0.7670134}
   m_Size:
-    m_Target: 10.596589
+    m_Target: 4.713656
     speed: 2
-    m_Value: 10.596589
+    m_Value: 9.69328
   m_Ortho:
     m_Target: 0
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
   m_LastSceneViewOrtho: 0
@@ -434,10 +434,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1a220000
-      m_LastClickedID: 8730
-      m_ExpandedIDs: d4fbffffa6210000
+      scrollPos: {x: 0, y: 16}
+      m_SelectedIDs: 526fffff
+      m_LastClickedID: -37038
+      m_ExpandedIDs: 6475ffffb879ffffd4fbffff161c0000b81c0000dc240000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -499,19 +499,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\aiden\Desktop\Azure-Bloodmage\Azure Bloodmage
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e40c0000
-    m_LastClickedID: 3300
+    m_SelectedIDs: c60c0000
+    m_LastClickedID: 3270
     m_ExpandedIDs: 00000000a4090000d00c0000f842000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 72}
+    m_ScrollPosition: {x: 0, y: 258}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 110
 --- !u!114 &15

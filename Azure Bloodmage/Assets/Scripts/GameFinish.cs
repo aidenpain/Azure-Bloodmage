@@ -7,7 +7,6 @@ public class GameFinish : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider col)
 	{
-		Debug.Log(col.gameObject.name);
 		//reaching the cave
 		if(col.gameObject.name == "CaveEntrance" || col.gameObject.name == "CaveEntrance2"){
 			//if you got the coins, complete the game

@@ -56,13 +56,21 @@ public class PlayerHealth : MonoBehaviour {
 	}
 	
 	public void TakeDamage(int damage){
-		curHealth -= damage;	
-		healthWidth = (float)curHealth/maxHealth*barWidth;
-		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);
+		ChangeHealth(-(damage));
 		
 		if (curHealth <= 0){
 			GetComponent<GameOver>().gameOver();
 		}
+	}
+	
+	//increases health when parameter is positive, decreases health when parameter is negative
+	public void ChangeHealth(int health){
+		//health shouldn't exceed max health
+		if(health > (maxHealth - curHealth)){curHealth = maxHealth;}
+		else{curHealth += health;}
+		
+		healthWidth = (float)curHealth/maxHealth*barWidth;
+		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);		
 	}
 	
 	public bool DepleteMana(int cost){
@@ -79,5 +87,13 @@ public class PlayerHealth : MonoBehaviour {
 	public void UpdateMana(){
 		manaWidth = (float)curMana/maxMana*barWidth;
 		manaBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, manaWidth);
+	}
+	
+	public int GetCurHealth(){
+		return curHealth;
+	}
+	
+	public int GetMaxHealth(){
+		return maxHealth;
 	}
 }
