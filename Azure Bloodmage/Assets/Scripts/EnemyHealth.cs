@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour {
 	private Camera cam;
-	public int maxHealth;
+	private int maxHealth;
 	private int curHealth;
 	
 	public GameObject healthBarPrefab;	//prefab from assets folder
@@ -19,14 +19,17 @@ public class EnemyHealth : MonoBehaviour {
 	Color bgBarColor;
 	
 	public void Awake(){
-		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
-		HealthBarInstance = Instantiate(healthBarPrefab, GameObject.Find("EnemyUIPanel").transform);
+		maxHealth = gameObject.GetComponent<EnemyStats>().health;
 		curHealth = maxHealth;
+		
+		HealthBarInstance = Instantiate(healthBarPrefab, GameObject.Find("EnemyUIPanel").transform);
 		bgBar = HealthBarInstance.transform.GetChild(0).gameObject;
 		healthBar = HealthBarInstance.transform.GetChild(1).GetComponent<RectTransform>();
 		barWidth = healthBar.rect.width;
 		healthColor = healthBar.GetComponent<Image>().color;
 		bgBarColor = bgBar.GetComponent<Image>().color;
+
+		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
 	}
 	
 	public void Update(){

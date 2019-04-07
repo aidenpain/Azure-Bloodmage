@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5183674503040209689}
   m_Layer: 0
-  m_Name: EnemySphere
+  m_Name: EnemySphereRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +143,8 @@ GameObject:
   - component: {fileID: 5841849418685577400}
   - component: {fileID: 5841849418685577395}
   - component: {fileID: 7257333073352710658}
+  - component: {fileID: 3433318122068007511}
+  - component: {fileID: 448224117270118501}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Enemy
@@ -344,6 +346,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b557ae4801032409ff6b9c324718c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
   healthBarPrefab: {fileID: 6096618278073626905, guid: c799b5236429c0647b52a1c1b3ff3830,
     type: 3}
+--- !u!114 &3433318122068007511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841849418685577403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da3fd82f712afb4ea530df28819211d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
+  attack: 10
+--- !u!114 &448224117270118501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841849418685577403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9e8dac30215324da15c87d3ebe18ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}

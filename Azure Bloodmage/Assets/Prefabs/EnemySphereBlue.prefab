@@ -143,6 +143,8 @@ GameObject:
   - component: {fileID: 7313484742365423394}
   - component: {fileID: 7313484742365423401}
   - component: {fileID: 5826502868221068696}
+  - component: {fileID: 1647534178010530404}
+  - component: {fileID: 8416769085992112434}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Enemy
@@ -344,6 +346,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b557ae4801032409ff6b9c324718c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   healthBarPrefab: {fileID: 6096618278073626905, guid: c799b5236429c0647b52a1c1b3ff3830,
     type: 3}
+--- !u!114 &1647534178010530404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313484742365423393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da3fd82f712afb4ea530df28819211d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attack: 20
+--- !u!114 &8416769085992112434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313484742365423393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9e8dac30215324da15c87d3ebe18ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

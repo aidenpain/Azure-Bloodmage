@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+//controls both health and mana
 public class PlayerHealth : MonoBehaviour {
 	private int maxHealth;
 	private int curHealth;
@@ -20,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 	private int iframes;
 	private int refresh_frames;
 	private int itimer;
-	private int timer;
+	private int refresh_timer;
 	
 	public void Awake(){
 		maxHealth = GetComponent<CharacterStats>().health;
@@ -28,36 +29,35 @@ public class PlayerHealth : MonoBehaviour {
 		maxMana = GetComponent<CharacterStats>().mana;
 		curMana = maxMana;
 		barWidth = healthBar.rect.width;
-		iframes = 30;
-		refresh_frames = 30;
+		iframes = 30;		//brief invincibility after getting hit
+		refresh_frames = 30; //mana refresh rate
 		itimer = 0;
-		timer = 0;
+		refresh_timer = 0;
 	}
 	
+	
 	public void Update(){
-		if(itimer < iframes)itimer++;
-		if(timer < refresh_frames)timer++;
+		if(itimer < iframes)itimer++;	
+		//wait to refill mana
+		if(refresh_timer < refresh_frames)refresh_timer++;	
 		else{
 			if(curMana < maxMana){
 				curMana++;
 				UpdateMana();
 			}
-			timer = 0;
+			refresh_timer = 0;
 		}
 	}
-	
-	void OnCollisionStay(Collision col){
-		if(itimer >= iframes){
-			if(col.gameObject.tag == "Enemy"){
-				TakeDamage(10);
-				itimer = 0;
-			}
-		}
-	}
-	
+
+	//take damage from enemies
 	public void TakeDamage(int damage){
-		ChangeHealth(-(damage));
+		//handles mercy invincibility
+		if(itimer >= iframes){		
+			ChangeHealth(-(damage));
+			itimer = 0;
+		}
 		
+		//game over if health drops to 0
 		if (curHealth <= 0){
 			GetComponent<GameOver>().gameOver();
 		}
@@ -69,10 +69,11 @@ public class PlayerHealth : MonoBehaviour {
 		if(health > (maxHealth - curHealth)){curHealth = maxHealth;}
 		else{curHealth += health;}
 		
-		healthWidth = (float)curHealth/maxHealth*barWidth;
-		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);		
+		UpdateHealth();
 	}
 	
+	//the player cannot cast spells without enough mana; otherwise decrease available mana
+	//called from Attack script
 	public bool DepleteMana(int cost){
 		if (curMana < cost){
 			return false;
@@ -84,15 +85,22 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 	
+	//health bar resizes when health decreases or increases
+	public void UpdateHealth(){
+		healthWidth = (float)curHealth/maxHealth*barWidth;
+		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);
+	}
+		
+	//mana bar resizes when mana is used or recharged
 	public void UpdateMana(){
 		manaWidth = (float)curMana/maxMana*barWidth;
 		manaBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, manaWidth);
 	}
 	
+	//get methods
 	public int GetCurHealth(){
 		return curHealth;
 	}
-	
 	public int GetMaxHealth(){
 		return maxHealth;
 	}
