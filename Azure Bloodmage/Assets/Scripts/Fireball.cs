@@ -34,7 +34,7 @@ public class Fireball : MonoBehaviour {
 	}
 	
 	private IEnumerator TimedDestroy(){
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(3f);
 		Destroy(gameObject);
 	}
 }
