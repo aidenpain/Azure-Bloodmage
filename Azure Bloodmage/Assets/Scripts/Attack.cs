@@ -9,6 +9,7 @@ public class Attack : MonoBehaviour {
 	Animator handAnim;
 	private float attackTimer;
 	public float fireballCoolDown;
+	private int thrust;
 	
 	public GameObject fireball;
 	public GameObject reticule;
@@ -31,8 +32,10 @@ public class Attack : MonoBehaviour {
 			MeleeAttack();
 		}
 		else if(Input.GetButtonDown("Fire2") && attackTimer >= fireballCoolDown){ //fireball
-			if(GetComponent<PlayerHealth>().DepleteMana(5))
-				Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
+			if(GetComponent<PlayerHealth>().DepleteMana(5)){
+				GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
+				newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
+			}
 		}
 	}
 	

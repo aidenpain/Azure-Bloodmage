@@ -4,9 +4,13 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HealthPickup : MonoBehaviour{
-	public GameObject player;
+	private GameObject player;
 	private int playerHealth;
 	private int playerMaxHealth;
+	
+	void Start(){
+		player = GameObject.Find("Player");
+	}
 	
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject == player){

@@ -13,7 +13,6 @@ public class EnemyMeleeAttack : MonoBehaviour {
 	
 	void OnCollisionStay(Collision col){
 		if(col.gameObject == player){
-			Debug.Log("something");
 			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(attack);
 		}
 	}

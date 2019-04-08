@@ -3,18 +3,25 @@ using UnityEngine;
 using System.Collections;
 
 public class Fireball : MonoBehaviour {
-	private Transform player;
 	public int thrust;
+	private bool isEnemyFireball;
 	
 	public void Awake(){
-		player = GameObject.Find("Player").transform;
-		GetComponent<Rigidbody>().AddForce(player.transform.forward*thrust);
 		StartCoroutine(TimedDestroy());
 	}
 
+	public void FireFireball(Transform caster, bool isEnemyFireball){
+		GetComponent<Rigidbody>().AddForce(caster.forward*thrust);
+		this.isEnemyFireball = isEnemyFireball;
+	}
+
 	void OnCollisionEnter(Collision col){
-		if(col.gameObject.tag == "Enemy"){
+		if(!(isEnemyFireball) && col.gameObject.tag == "Enemy"){
 			col.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+			Destroy(gameObject);
+		}
+		else if(isEnemyFireball && col.gameObject.tag == "Player"){
+			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(20);
 			Destroy(gameObject);
 		}
 		else{

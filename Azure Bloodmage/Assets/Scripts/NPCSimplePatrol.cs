@@ -80,9 +80,6 @@ public class NPCSimplePatrol : MonoBehaviour {
         {
             follow = true;
             agent.SetDestination(target.position);
-
-          
-
         }
         if (distance >= lookRadius)
         {
@@ -172,4 +169,8 @@ public class NPCSimplePatrol : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+	
+	public bool GetFollow(){
+		return follow;
+	}
 }

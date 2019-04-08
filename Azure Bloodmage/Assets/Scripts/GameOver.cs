@@ -8,6 +8,8 @@ public class GameOver : MonoBehaviour {
 	private int score;
 	
 	public void gameOver(){
+		gameObject.GetComponent<ABMPlayerController>().enabled = false;
+		
 		gameOverCanvas.SetActive(true);
 		score = gameObject.GetComponent<LocalScoreTracker>().GetLocalScore();
 		ScoreTracker.Instance.SetHighScore(score);
