@@ -10,6 +10,9 @@ public class Attack : MonoBehaviour {
 	private float attackTimer;
 	public float fireballCoolDown;
 	private int thrust;
+	private int curStance;
+	private static int ATTACK_STANCE = 1;	//stances defined as ints for quick and easy comparison
+	private static int DEFENSE_STANCE = 0;
 	
 	public GameObject fireball;
 	public GameObject reticule;
@@ -17,6 +20,7 @@ public class Attack : MonoBehaviour {
 	void Start () {
 		handAnim = Hand.GetComponent<Animator>();
 		myWeapon = Hand.GetComponentInChildren<Weapon>();
+		curStance = ATTACK_STANCE;
 	}
 	
 	public void Update(){
@@ -32,10 +36,29 @@ public class Attack : MonoBehaviour {
 			MeleeAttack();
 		}
 		else if(Input.GetButtonDown("Fire2") && attackTimer >= fireballCoolDown){ //fireball
-			if(GetComponent<PlayerHealth>().DepleteMana(5)){
-				GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
-				newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
+			if(curStance == ATTACK_STANCE){
+				if(GetComponent<PlayerHealth>().DepleteMana(5)){
+					GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + 
+															gameObject.transform.forward*2, Quaternion.identity);
+					newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
+				}
+			}		
+			else if(curStance == DEFENSE_STANCE){
+				if(GetComponent<PlayerHealth>().DepleteMana(5)){
+					GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + 
+															gameObject.transform.forward*2, Quaternion.identity);
+					newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
+				}
 			}
+		}
+		else if(Input.GetButtonDown("Switch")){ //switch stance
+			if(curStance == ATTACK_STANCE){
+				curStance = DEFENSE_STANCE;
+			}
+			else if(curStance == DEFENSE_STANCE){
+				curStance = ATTACK_STANCE;
+			}
+			Debug.Log(curStance);
 		}
 	}
 	
@@ -52,6 +75,5 @@ public class Attack : MonoBehaviour {
                 eHealth.TakeDamage(myWeapon.attackDamage);
             }
         }
-
     }
 }

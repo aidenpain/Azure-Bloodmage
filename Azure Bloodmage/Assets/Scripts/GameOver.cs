@@ -9,9 +9,10 @@ public class GameOver : MonoBehaviour {
 	
 	public void gameOver(){
 		gameObject.GetComponent<ABMPlayerController>().enabled = false;
+		gameObject.GetComponent<Attack>().enabled = false;
 		
 		gameOverCanvas.SetActive(true);
-		score = gameObject.GetComponent<LocalScoreTracker>().GetLocalScore();
+		score = gameObject.GetComponent<ScoreTracker>().GetLocalScore();
 		ScoreTracker.Instance.SetHighScore(score);
 		Time.timeScale = 0f;
 	}

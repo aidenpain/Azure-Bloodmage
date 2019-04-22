@@ -1,0 +1,36 @@
+change log
+
+scripts edited:
+- Attack.cs
+	added stance changes
+- CoinPickup.cs
+	- edited CoinPickup to find Player and use CoinTracker and ScoreTracker
+- CoinTracker.cs
+	- added CoinTracker to keep track of coins
+- DestroyEverything.cs
+	- edited DestroyEverything to not destroy Player but the ScoreTracker instead
+- EnemyHealth.cs
+	- edited EnemyHealth to update the score when enemy is killed
+- EnemyStats.cs
+	- added score to EnemyStats
+- GameFinish.cs -> renamed to LevelFinish.cs
+- GameFinish -> new script for boss
+- GameOver.cs
+	- disable Attack script on GameOver
+- LocalScoreTracker.cs -> deleted
+	- removed LocalScoreTracker script component from player
+- Pause.cs
+	- disable moving and attacking from the pause menu
+- ScoreTracker.cs
+	- edited ScoreTracker to implement local score stuff
+- edited EnemyHealth, GameFinish, and GameOver to reference ScoreTracker
+
+in-engine changes:
+- separated score and coin text
+- removed DontDestroyOnLoad from Canvas and EventSystem
+- added Projectile layer to fireball and change layer collision to not interact with other projectiles
+- added input "Switch"
+- made Player and Canvas into prefabs
+- renamed "CaveEntrance" to "Exit"
+
+SWITCH MENU START BUTTON BACK TO INDEX 2

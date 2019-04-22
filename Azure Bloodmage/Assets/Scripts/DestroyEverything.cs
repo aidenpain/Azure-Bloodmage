@@ -1,15 +1,15 @@
 using System;
 using UnityEngine;
 
-public class DestroyEverything : MonoBehaviour{
+public class DestroyThings : MonoBehaviour{
 	
-	public GameObject player;
-	public GameObject ui;
-	public GameObject eventsys;
+	private GameObject scoreTracker;
 
-	public void DestroyThings(){
-		Destroy(player);
-		Destroy(ui);
-		Destroy(eventsys);
+	void Start(){
+		scoreTracker = GameObject.Find("LocalScoreTracker");
+	}
+
+	public void DestroyTheThing(){
+		Destroy(scoreTracker);
 	}
 }

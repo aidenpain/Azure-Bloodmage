@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour {
 	private Camera cam;
@@ -18,6 +19,9 @@ public class EnemyHealth : MonoBehaviour {
 	Color healthColor;
 	Color bgBarColor;
 	
+	private GameObject player;
+	private GameObject scoreTracker;
+	
 	public void Awake(){
 		maxHealth = gameObject.GetComponent<EnemyStats>().health;
 		curHealth = maxHealth;
@@ -30,6 +34,18 @@ public class EnemyHealth : MonoBehaviour {
 		bgBarColor = bgBar.GetComponent<Image>().color;
 
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+	}
+	
+	void OnEnable(){
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
+	
+	void OnDisable(){
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+	}
+	
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode){
+		scoreTracker = GameObject.Find("ScoreTracker");
 	}
 	
 	public void Update(){
@@ -58,8 +74,9 @@ public class EnemyHealth : MonoBehaviour {
 		healthWidth = (float)curHealth/maxHealth*barWidth;
 		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthWidth);
 		
+		//if enemy is killed, increase score and destroy enemy game object
 		if (curHealth <= 0){
-			
+			scoreTracker.GetComponent<ScoreTracker>().IncreaseLocalScore(gameObject.GetComponent<EnemyStats>().score);
 			Destroy(HealthBarInstance.gameObject);
 			Destroy(this.gameObject);
 		}

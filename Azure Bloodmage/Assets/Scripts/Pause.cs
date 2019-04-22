@@ -26,10 +26,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			if(Time.timeScale == 1.0f){
 				Time.timeScale = 0.0f;
 				pauseScreen.gameObject.SetActive(true);
+				gameObject.GetComponent<ABMPlayerController>().enabled = false;
+				gameObject.GetComponent<Attack>().enabled = false;
 			}
 			else{
 				Time.timeScale = 1.0f;
 				pauseScreen.gameObject.SetActive(false);
+				gameObject.GetComponent<ABMPlayerController>().enabled = true;
+				gameObject.GetComponent<Attack>().enabled = true;
 			}
 		}
 	}
