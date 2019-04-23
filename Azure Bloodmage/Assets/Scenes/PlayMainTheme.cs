@@ -8,6 +8,7 @@ public class PlayMainTheme : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Stop("MMTheme");
     }
 
     // Update is called once per frame
