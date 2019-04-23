@@ -1,0 +1,12 @@
+change log alpha_2
+
+scripts edited:
+MouseLook.cs
+- Attack.cs
+	added stance support
+- ABMPlayerController.cs
+	adjusted initial values
+	
+
+in engine
+	tutorial trigger plains

@@ -11,8 +11,8 @@ public class Attack : MonoBehaviour {
 	public float fireballCoolDown;
 	private int thrust;
 	private int curStance;
-	private static int ATTACK_STANCE = 1;	//stances defined as ints for quick and easy comparison
-	private static int DEFENSE_STANCE = 0;
+	private static int ATTACK_STANCE = 2;	//stances defined as ints for quick and easy comparison
+	private static int MAGIC_STANCE = 1;
 	
 	public GameObject fireball;
 	public GameObject reticule;
@@ -36,29 +36,21 @@ public class Attack : MonoBehaviour {
 			MeleeAttack();
 		}
 		else if(Input.GetButtonDown("Fire2") && attackTimer >= fireballCoolDown){ //fireball
-			if(curStance == ATTACK_STANCE){
-				if(GetComponent<PlayerHealth>().DepleteMana(5)){
-					GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + 
-															gameObject.transform.forward*2, Quaternion.identity);
-					newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
-				}
-			}		
-			else if(curStance == DEFENSE_STANCE){
-				if(GetComponent<PlayerHealth>().DepleteMana(5)){
-					GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + 
-															gameObject.transform.forward*2, Quaternion.identity);
-					newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
-				}
-			}
+			if(GetComponent<PlayerHealth>().DepleteMana(5)){
+				GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + 
+														gameObject.transform.forward*2, Quaternion.identity);
+				newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false, curStance);
+			}			
 		}
 		else if(Input.GetButtonDown("Switch")){ //switch stance
 			if(curStance == ATTACK_STANCE){
-				curStance = DEFENSE_STANCE;
+				curStance = MAGIC_STANCE;
+				//insert defensive stat changes here...
 			}
-			else if(curStance == DEFENSE_STANCE){
+			else if(curStance == MAGIC_STANCE){
 				curStance = ATTACK_STANCE;
+				//insert offensive stat changes here...
 			}
-			Debug.Log(curStance);
 		}
 	}
 	
@@ -72,7 +64,7 @@ public class Attack : MonoBehaviour {
             if(hit.collider.tag == "Enemy")
             {
                 EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
-                eHealth.TakeDamage(myWeapon.attackDamage);
+                eHealth.TakeDamage(myWeapon.attackDamage*curStance);	//melee is more powerful in the attack stance
             }
         }
     }

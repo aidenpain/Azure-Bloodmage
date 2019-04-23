@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Audio\Sound.cs" />
      <Compile Include="Assets\Scripts\AutoLoadScene.cs" />
+     <Compile Include="Assets\Scripts\BossRangedAttack.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\CoinPickup.cs" />
      <Compile Include="Assets\Scripts\CoinTracker.cs" />

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyRangedAttack : MonoBehaviour {
+public class BossRangedAttack : MonoBehaviour {
 	public GameObject fireball;
 	public float fireRate;
 	private int attack;

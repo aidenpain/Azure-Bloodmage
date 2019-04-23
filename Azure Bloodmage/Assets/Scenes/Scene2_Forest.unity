@@ -5203,6 +5203,16 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 555952354}
+    - target: {fileID: 3859088675884504317, guid: f0504f30d5a80e94287cd895d47cbade,
+        type: 3}
+      propertyPath: mouseLook.XSensitivity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859088675884504317, guid: f0504f30d5a80e94287cd895d47cbade,
+        type: 3}
+      propertyPath: mouseLook.YSensitivity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3859088675884504305, guid: f0504f30d5a80e94287cd895d47cbade,
         type: 3}
       propertyPath: gameOverCanvas
