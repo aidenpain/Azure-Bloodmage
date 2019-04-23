@@ -13,6 +13,7 @@ public class ShowDialogue : MonoBehaviour {
 	
 	public IEnumerator showText(){
 		panel.SetActive(true);
+		Time.timeScale = 0.0f;
 		int i = 1;
 		panelText.text = dialogueList[0];
 		listLength = dialogueList.Count;
@@ -24,6 +25,7 @@ public class ShowDialogue : MonoBehaviour {
 				}
 				else{	//if we've reached the end of the list, close the panel
 					panel.SetActive(false);
+					Time.timeScale = 1.0f;
 					yield break;
 				}
 			}

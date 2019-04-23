@@ -12,8 +12,8 @@ public class Attack : MonoBehaviour
     public float fireballCoolDown;
     private int thrust;
     private int curStance;
-    private static int ATTACK_STANCE = 1;   //stances defined as ints for quick and easy comparison
-    private static int DEFENSE_STANCE = 0;
+    private static int ATTACK_STANCE = 2;   //stances defined as ints for quick and easy comparison
+    private static int MAGIC_STANCE = 1;
     private int sword;
 
     public GameObject fireball;
@@ -28,6 +28,7 @@ public class Attack : MonoBehaviour
 
     public void Update()
     {
+		//reticule positioning
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f))
             reticule.transform.position = hit.point;
@@ -43,32 +44,21 @@ public class Attack : MonoBehaviour
         else if (Input.GetButtonDown("Fire2") && attackTimer >= fireballCoolDown)
         { //fireball
             FindObjectOfType<AudioManager>().Play("PlayerFireBall");
-            if (curStance == ATTACK_STANCE)
-            {
-                if (GetComponent<PlayerHealth>().DepleteMana(5))
-                {
-                    GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0, .5f, 0) +
-                                                            gameObject.transform.forward * 2, Quaternion.identity);
-                    newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
-                }
-            }
-            else if (curStance == DEFENSE_STANCE)
-            {
-                if (GetComponent<PlayerHealth>().DepleteMana(5))
-                {
-                    GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0, .5f, 0) +
-                                                            gameObject.transform.forward * 2, Quaternion.identity);
-                    newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false);
-                }
-            }
+            
+			if (GetComponent<PlayerHealth>().DepleteMana(2))
+			{
+				GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0, .5f, 0) +
+														gameObject.transform.forward * 2, Quaternion.identity);
+				newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, false, curStance);
+			}            
         }
         else if (Input.GetButtonDown("Switch"))
         { //switch stance
             if (curStance == ATTACK_STANCE)
             {
-                curStance = DEFENSE_STANCE;
+                curStance = MAGIC_STANCE;
             }
-            else if (curStance == DEFENSE_STANCE)
+            else if (curStance == MAGIC_STANCE)
             {
                 curStance = ATTACK_STANCE;
             }
@@ -87,7 +77,7 @@ public class Attack : MonoBehaviour
             if (hit.collider.tag == "Enemy")
             {
                 EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
-                eHealth.TakeDamage(myWeapon.attackDamage);
+                eHealth.TakeDamage(myWeapon.attackDamage*curStance);	//melee is more powerful in the attack stance
                 if (sword == 1)
                 {
                     FindObjectOfType<AudioManager>().Play("Sword1");

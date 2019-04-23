@@ -23,7 +23,7 @@ public class EnemyRangedAttack : MonoBehaviour {
 	}
 	void Fire(){
 		GameObject newFireball = Instantiate(fireball, gameObject.transform.position + new Vector3(0,.5f,0) + gameObject.transform.forward*2, Quaternion.identity);
-		newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, true);
+		newFireball.GetComponent<Fireball>().FireFireball(gameObject.transform, true, 0);
         FindObjectOfType<AudioManager>().Play("EnemyRange");
 
     }
