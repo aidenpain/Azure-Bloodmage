@@ -1,0 +1,15 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.193236683)
+
+newmtl mask_material
+kd 0.5 0.5 0.5
+illum 1
+
+newmtl fireball_material
+kd 0.5 0.5 0.5
+illum 1
+
+newmtl horn_material
+kd 0.5 0.5 0.5
+illum 1
+

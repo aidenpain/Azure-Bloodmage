@@ -1,0 +1,19 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.193236683)
+
+newmtl Woodbase
+kd 0.588 0.588 0.588
+illum 1
+
+newmtl Metalbase2
+kd 0.588 0.588 0.588
+illum 1
+
+newmtl Metalbase1
+kd 0.588 0.588 0.588
+illum 1
+
+newmtl Chains
+kd 0.588 0.588 0.588
+illum 1
+

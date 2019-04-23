@@ -14,6 +14,7 @@ public class EnemyMeleeAttack : MonoBehaviour {
 	void OnCollisionStay(Collision col){
 		if(col.gameObject == player){
 			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(attack);
-		}
+            FindObjectOfType<AudioManager>().Play("EnemyMelee");
+        }
 	}
 }

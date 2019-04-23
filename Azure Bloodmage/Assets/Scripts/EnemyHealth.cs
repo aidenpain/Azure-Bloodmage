@@ -79,6 +79,7 @@ public class EnemyHealth : MonoBehaviour {
 			scoreTracker.GetComponent<ScoreTracker>().IncreaseLocalScore(gameObject.GetComponent<EnemyStats>().score);
 			Destroy(HealthBarInstance.gameObject);
 			Destroy(this.gameObject);
-		}
+            FindObjectOfType<AudioManager>().Play("MonsterDeath");
+        }
 	}
 }

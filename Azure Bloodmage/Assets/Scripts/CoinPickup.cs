@@ -29,7 +29,8 @@ public class CoinPickup : MonoBehaviour{
 			scoreTracker.GetComponent<ScoreTracker>().IncreaseLocalScore(100);
 			player.GetComponent<CoinTracker>().IncreaseNumCoins(1);
 			Destroy(gameObject);
-		}
+            FindObjectOfType<AudioManager>().Play("Coin");
+        }
 	}
 	
 }
