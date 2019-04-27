@@ -4,23 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/_preload.unity
-    guid: cf4eb2648dea8a841b83b0d927fc2151
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 562f794476f92904494e2434a77f9be8
-  - enabled: 1
-    path: Assets/Scenes/Scene1_Inn.unity
-    guid: 6c8bc5caaa4a8e0499bc90eabd215c40
-  - enabled: 1
-    path: Assets/Scenes/Scene2_Forest.unity
-    guid: 425c3c39cfd937c4fa6bfe5735550dee
-  - enabled: 1
-    path: Assets/Scenes/Scene4_Castle.unity
-    guid: c87eac3f86cab414da3a02a3453671ac
-  - enabled: 1
-    path: Assets/Scenes/Scene5_Boss.unity
-    guid: 98ccf85c9adc350429765dc067315033
+  m_Scenes: []
   m_configObjects: {}
