@@ -16,11 +16,14 @@ public class Fireball : MonoBehaviour {
 
 	//handles both player and enemy fireballs and changes attack power based on stance
 	public void FireFireball(Transform caster, bool isEnemyFireball, int stance){
-		GetComponent<Rigidbody>().AddForce(caster.forward*thrust);
-		this.isEnemyFireball = isEnemyFireball;
 		if(!(isEnemyFireball)){
 			curStance = stance;
+			GetComponent<Rigidbody>().AddForce(caster.forward*thrust*(2/curStance));
 		}
+		else{
+			GetComponent<Rigidbody>().AddForce(caster.forward*thrust);
+		}
+		this.isEnemyFireball = isEnemyFireball;
 	}
 
 	void OnCollisionEnter(Collision col){

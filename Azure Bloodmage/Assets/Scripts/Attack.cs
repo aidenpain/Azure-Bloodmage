@@ -62,7 +62,6 @@ public class Attack : MonoBehaviour
             {
                 curStance = ATTACK_STANCE;
             }
-            Debug.Log(curStance);
         }
         sword = UnityEngine.Random.Range(1, 3);
     }
