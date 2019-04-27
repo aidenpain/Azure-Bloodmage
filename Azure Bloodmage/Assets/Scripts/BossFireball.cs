@@ -4,31 +4,17 @@ using System.Collections;
 
 public class BossFireball : MonoBehaviour {
 	public int thrust;
-	private bool isEnemyFireball;
-	
-    private int curStance;
-    private static int ATTACK_STANCE = 2;   //stances defined as ints for quick and easy comparison
-    private static int MAGIC_STANCE = 1;
 	
 	public void Awake(){
 		StartCoroutine(TimedDestroy());
 	}
 
-	//handles both player and enemy fireballs and changes attack power based on stance
-	public void FireFireball(Transform caster, bool isEnemyFireball, int stance){
-		GetComponent<Rigidbody>().AddForce(caster.forward*thrust);
-		this.isEnemyFireball = isEnemyFireball;
-		if(!(isEnemyFireball)){
-			curStance = stance;
-		}
+	public void FireFireball(Transform caster){
+		GetComponent<Rigidbody>().AddForce(gameObject.transform.forward*thrust);
 	}
 
 	void OnCollisionEnter(Collision col){
-		if(!(isEnemyFireball) && col.gameObject.tag == "Enemy"){
-			col.gameObject.GetComponent<EnemyHealth>().TakeDamage(10*(2/curStance));	//magic is more powerful in the magic stance
-			Destroy(gameObject);
-		}
-		else if(isEnemyFireball && col.gameObject.tag == "Player"){
+		if(col.gameObject.tag == "Player"){
 			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(15);
 			Destroy(gameObject);
 		}
