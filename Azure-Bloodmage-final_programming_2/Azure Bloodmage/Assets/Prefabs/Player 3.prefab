@@ -215,6 +215,8 @@ MonoBehaviour:
   fireball: {fileID: 5033440453611595382, guid: dcb568311b9ea1e448a3dee8a209ad4f,
     type: 3}
   reticule: {fileID: 2963277703294095023}
+  swordImg: {fileID: 0}
+  magicImg: {fileID: 0}
 --- !u!114 &3828739447202047223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,97 +506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
-  attackRange: 5
+  attackRange: 10
   attackCoolDown: 0.3
---- !u!1001 &2499832994062951986
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2027833237991401997}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_Name
-      value: SP_Rhea_sword
-      objectReference: {fileID: 0}
-    - target: {fileID: -4485648718695722215, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d243f03337cbc7a41b4727d6775704b4, type: 2}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.161
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.02
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.3022
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.99929667
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.037500873
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 184.29799
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.005776688
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.005776688
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: cdd55bd58498a954db4b33578e68ae2a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.005776688
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cdd55bd58498a954db4b33578e68ae2a, type: 3}
 --- !u!1001 &6439860874838311191
 PrefabInstance:
   m_ObjectHideFlags: 0

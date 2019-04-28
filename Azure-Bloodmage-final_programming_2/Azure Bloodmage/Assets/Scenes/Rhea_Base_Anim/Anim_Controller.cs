@@ -2,73 +2,75 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Anim_Controller : MonoBehaviour {
+public class Anim_Controller : MonoBehaviour
+{
 
     Animator playerAnim;
     // Use this for initialization
-	void Start () {
+    void Start()
+    {
         playerAnim = this.GetComponent<Animator>();
 
     }
 
-	
-	// Update is called once per frame
-	void Update () {
-        /*
-        if (Input.GetKey(KeyCode.Mouse0))
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetButtonDown("Fire1"))
         {
             if (playerAnim.GetInteger("Stance") == 0)
             {
-                playerAnim.SetBool("isMAttacking", true);
-            }
-            else
-            { 
-                playerAnim.SetBool("isSAttacking", true);
+                playerAnim.SetTrigger("isSAttacking");
             }
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetButtonDown("Fire2"))
         {
-            playerAnim.SetBool("isMAttacking", false);
-            playerAnim.SetBool("isSAttacking", false);
+            if (playerAnim.GetInteger("Stance") == 1)
+            {
+                playerAnim.SetTrigger("isMAttacking");
+            }
         }
-        
+
+
         if (Input.GetKey(KeyCode.W))
         {
             if (playerAnim.GetInteger("Stance") == 0)
             {
-                playerAnim.SetBool("isWalkingM", true);
+                playerAnim.SetBool("isWalkingS", true);
             }
             else
             {
-                playerAnim.SetBool("isWalkingS", true);
+                playerAnim.SetBool("isWalkingM", true);
             }
         }
-        
         if (Input.GetKeyUp(KeyCode.W))
         {
             if (playerAnim.GetInteger("Stance") == 0)
             {
-                playerAnim.SetBool("isWalkingM", false);
-            }
-            else{
                 playerAnim.SetBool("isWalkingS", false);
             }
+            else
+            {
+                playerAnim.SetBool("isWalkingM", false);
+            }
         }
-        */
+
         if (Input.GetButtonDown("Switch"))
         {
             if (playerAnim.GetInteger("Stance") == 0)
             {
-                playerAnim.SetTrigger("isSwitchingtoSword");
+                playerAnim.SetTrigger("isSwitchingtoMagic");
                 playerAnim.SetInteger("Stance", 1);
             }
             else
             {
-                playerAnim.SetTrigger("isSwitchingtoMagic");
+                playerAnim.SetTrigger("isSwitchingtoSword");
                 playerAnim.SetInteger("Stance", 0);
             }
-            
+
         }
-       
+
     }
 }
