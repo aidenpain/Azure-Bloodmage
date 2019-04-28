@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3169,6 +3169,16 @@ PrefabInstance:
       propertyPath: levelFinishScreen
       value: 
       objectReference: {fileID: 2098245986}
+    - target: {fileID: 3828739447202047222, guid: 3a3b81d11b285334b9d8f86b8a21bd69,
+        type: 3}
+      propertyPath: swordImg
+      value: 
+      objectReference: {fileID: 2098245993}
+    - target: {fileID: 3828739447202047222, guid: 3a3b81d11b285334b9d8f86b8a21bd69,
+        type: 3}
+      propertyPath: magicImg
+      value: 
+      objectReference: {fileID: 2098245992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a3b81d11b285334b9d8f86b8a21bd69, type: 3}
 --- !u!1 &624145837
@@ -7481,6 +7491,18 @@ RectTransform:
 --- !u!1 &2098245991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1656166785040420095, guid: 98b06abfb27820242bcacb784ddc59f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2098245983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2098245992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5836136246094621860, guid: 98b06abfb27820242bcacb784ddc59f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2098245983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2098245993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3576519451455784707, guid: 98b06abfb27820242bcacb784ddc59f6,
     type: 3}
   m_PrefabInstance: {fileID: 2098245983}
   m_PrefabAsset: {fileID: 0}

@@ -18,6 +18,9 @@ public class Attack : MonoBehaviour
 
     public GameObject fireball;
     public GameObject reticule;
+	
+	public GameObject swordImg;
+	public GameObject magicImg;
 
     void Start()
     {
@@ -57,11 +60,16 @@ public class Attack : MonoBehaviour
             if (curStance == ATTACK_STANCE)
             {
                 curStance = MAGIC_STANCE;
+				magicImg.SetActive(true);
+				swordImg.SetActive(false);
             }
             else if (curStance == MAGIC_STANCE)
             {
                 curStance = ATTACK_STANCE;
+				swordImg.SetActive(true);
+				magicImg.SetActive(false);
             }
+            Debug.Log(curStance);
         }
         sword = UnityEngine.Random.Range(1, 3);
     }
