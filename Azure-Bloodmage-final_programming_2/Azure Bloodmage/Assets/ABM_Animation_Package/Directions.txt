@@ -1,0 +1,6 @@
+-Import Package
+-Open up models and make the Rhea_Model_NoAnim prefab a child of the player
+-Click on Rhea_Model_NoAnim in the Hierarchy and look for Animator in the Inspector
+-Disable "Apply Root Motion"
+-Connect the Player Anim Controller to the "Controller" Subcomponent
+-Add Anim_Controller.cs to Rhea_Model_NoAnim as a Component (Alternatively, the contents of Anim_Controller can be added to the Player Controller Script with some minor changes).
