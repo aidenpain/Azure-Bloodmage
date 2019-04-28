@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5183674503040209689}
   m_Layer: 0
   m_Name: EnemySphereRed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,6 +362,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.048304867
       objectReference: {fileID: 0}
+    - target: {fileID: -2718751425094262735, guid: 2c88eed53d2d09247882b14aec18733f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29cb4bd89f702aa4ab360e9cea186399, type: 2}
+    - target: {fileID: 783428229166224439, guid: 2c88eed53d2d09247882b14aec18733f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fb6bae5e79aaaf49915e61031394e55, type: 2}
+    - target: {fileID: 3588058871928167067, guid: 2c88eed53d2d09247882b14aec18733f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29cb4bd89f702aa4ab360e9cea186399, type: 2}
     - target: {fileID: 8201065134940678558, guid: 2c88eed53d2d09247882b14aec18733f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,21 +407,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10571
       objectReference: {fileID: 0}
-    - target: {fileID: 3588058871928167067, guid: 2c88eed53d2d09247882b14aec18733f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 29cb4bd89f702aa4ab360e9cea186399, type: 2}
-    - target: {fileID: 783428229166224439, guid: 2c88eed53d2d09247882b14aec18733f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1fb6bae5e79aaaf49915e61031394e55, type: 2}
-    - target: {fileID: -2718751425094262735, guid: 2c88eed53d2d09247882b14aec18733f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 29cb4bd89f702aa4ab360e9cea186399, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c88eed53d2d09247882b14aec18733f, type: 3}
 --- !u!1 &5218506817474767686 stripped

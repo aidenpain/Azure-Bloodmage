@@ -16743,6 +16743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedTotem_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6394663877692239755, guid: 4752683fadee57f4080cf7a8e066e9d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6394663877692239756, guid: 4752683fadee57f4080cf7a8e066e9d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29029,6 +29034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySphere4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29248,6 +29258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySphere4 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29302,6 +29317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841849417492656238, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82da3067a830a7b4787e18cd2f11210c, type: 3}
@@ -43736,6 +43756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySphere4 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43804,6 +43829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySphere6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
@@ -46209,6 +46239,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySphere4 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47556,6 +47591,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySphere4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
@@ -50961,6 +51001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySphere4 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51039,6 +51084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySphere5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
@@ -59268,6 +59318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySphere4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129462289831972965, guid: 82da3067a830a7b4787e18cd2f11210c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5183674503040209689, guid: 82da3067a830a7b4787e18cd2f11210c,
         type: 3}
