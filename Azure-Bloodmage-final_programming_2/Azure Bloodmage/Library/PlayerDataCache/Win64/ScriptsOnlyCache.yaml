@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - EnemyRangedAttack
     - EnemyStats
     - Fireball
+    - GameFinish
     - GameOver
     - HealthPickup
     - LevelFinish
@@ -42,6 +43,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimatorControllerTool
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -646,7 +649,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9956}
     - Class: 114
-      Script: {instanceID: 10208}
+      Script: {instanceID: 10030}
     - Class: 114
       Script: {instanceID: 10230}
     - Class: 114
@@ -1013,18 +1016,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements
-    className: CallbackExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements.Editor
-    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9

@@ -13,10 +13,8 @@ public class GameFinish : MonoBehaviour {
 	
 	void Update ()
 	{
-		Debug.Log(boss);
 		//if you beat the boss
 		if(boss == null){
-			//if you got the coins, complete the level
 			levelFinishScreen.SetActive(true);
 			GetComponent<ABMPlayerController>().enabled = false;
 			GetComponent<Attack>().enabled = false;
