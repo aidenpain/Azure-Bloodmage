@@ -4837,7 +4837,7 @@ MonoBehaviour:
   - The inn is eerily quiet...   (Left click or press the A button to continue.)
   - Use the WASD keys or the left joystick to move and hold left shift or the X button
     to run. Use the mouse or the right joystick to look around.
-  - Press Enter or Start to pause.
+  - Press Space or the Y button to jump. Press Enter or Start to pause.
   panel: {fileID: 1991862071}
   panelText: {fileID: 1991862070}
 --- !u!4 &401219688 stripped
